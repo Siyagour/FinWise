@@ -1,102 +1,80 @@
-# FinWise - AI Financial Advisor
+# finwise-
+AI-powered financial advisor and research agent 
 
-A modern, responsive frontend for an AI-powered financial advisor website built with React, TypeScript, and Tailwind CSS.
+# Finwise: AI-Powered Financial Advisor & Expense Manager
 
-## Features
+## 📌 Project Overview
+Finwise is an advanced AI-powered financial advisor and expense manager designed to provide **personalized financial advice** based on spending patterns, payment screenshots, Splitwise data, and uploaded financial content.  
+Users can upload bank statements, financial books, or link articles, and receive tailored insights aligned with top financial philosophies.
 
-- 🎨 **Sophisticated Green Theme** - Beautiful green color palette maintained in both light and dark modes
-- 🌓 **Dark/Light Mode Toggle** - Seamless theme switching with persistent preferences
-- 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
-- 💬 **AI Chat Interface** - ChatGPT-style chat interface with:
-  - Auto-resizing textarea
-  - Send on Enter, new line on Shift+Enter
-  - Floating send button inside input box
-  - File upload with paperclip icon
-  - Sticky input bar at bottom
-  - Scrollable message area
-  - User and AI message bubbles
-  - AI thinking loader
-  - Typing indicator animation
-- 🧭 **Collapsible Sidebar Navigation** - Sidebar with icons that can be collapsed
-- 📄 **Multiple Pages**:
-  - Single-scroll landing page
-  - AI Chat page
-  - About Us
-  - FAQs (with accordion)
-  - Disclaimer
-  - Privacy Policy
+⚠️ **Important Note:**  
+Finwise does **not provide financial guarantees or certainties**.  
+The system is designed to **advise and guide**, not to promise outcomes.  
+All recommendations are suggestions based on data analysis and financial philosophies.
 
-## Tech Stack
+---
 
-- **React 18** - UI library
-- **TypeScript** - Type safety
-- **Vite** - Build tool and dev server
-- **React Router** - Client-side routing
-- **Tailwind CSS** - Styling
-- **Lucide React** - Icons
+## 🎯 Domain Focus
+- Financial Technology & Personal Wealth Management
+- AI-driven financial planning
+- OCR-based expense tracking
+- Multi-source financial content synthesis
 
-## Getting Started
+---
 
-### Prerequisites
+## 🏗️ Architecture (Track B MVP)
 
-- Node.js 18+ and npm/yarn/pnpm
+# Finwise: AI-Powered Financial Advisor & Expense Manager
 
-### Installation
+## 📌 Project Overview
+Finwise is an advanced AI-powered financial advisor and expense manager designed to provide **personalized financial advice** based on spending patterns, payment screenshots, Splitwise data, and uploaded financial content.  
+Users can upload bank statements, financial books, or link articles, and receive tailored insights aligned with top financial philosophies.
 
-1. Install dependencies:
-```bash
-npm install
-```
+⚠️ **Important Note:**  
+Finwise does **not provide financial guarantees or certainties**.  
+The system is designed to **advise and guide**, not to promise outcomes.  
+All recommendations are suggestions based on data analysis and financial philosophies.
 
-2. Start the development server:
-```bash
-npm run dev
-```
+---
 
-3. Open your browser and navigate to `http://localhost:5173`
+## 🏗️ System Architecture
 
-### Build for Production
+### **Data Ingestion Layer**
+- Payment screenshots → OCR pipeline (Tesseract/EasyOCR).  
+- Splitwise API → expense-sharing data.  
+- Bank statements → CSV/PDF parsers.  
+- User uploads → financial books, linked articles.  
+- **Output:** Normalized JSON schema for downstream agents.
 
-```bash
-npm run build
-```
+### **Processing & Categorization Layer**
+- **OCR Agent:** Extracts structured text from screenshots.  
+- **Expense Categorizer Agent:** Maps transactions into categories (food, rent, travel).  
+- **Content Agent:** Summarizes uploaded books/articles into financial insights.  
+- **Framework:** FastAPI + LangChain tools.  
+- **Storage:** PostgreSQL tables for expenses, categories, and content.
 
-The built files will be in the `dist` directory.
+### **Advisory & Intelligence Layer**
+- **MVP (2 months):** Rule-based advisor for budgeting suggestions.  
+- **Future Vision:** Multi-guru philosophy engine, advanced goal tracking, sentiment analysis.  
 
-## Project Structure
+### **User Interface Layer**
+- **Frontend:** React + Next.js.  
+- **UI Libraries:** TailwindCSS, Material UI, Recharts/Chart.js.  
+- **Features:** Interactive dashboard, charts, advice cards, dark gradient theme.
 
-```
-src/
-├── components/          # Reusable components
-│   ├── Sidebar.tsx      # Collapsible sidebar navigation
-│   ├── ThemeToggle.tsx  # Dark/light mode toggle
-│   ├── ChatInput.tsx    # Chat input with file upload
-│   ├── MessageBubble.tsx # Message display component
-│   ├── TypingIndicator.tsx # Typing animation
-│   └── ThinkingLoader.tsx  # Thinking state indicator
-├── contexts/            # React contexts
-│   └── ThemeContext.tsx # Theme management
-├── pages/              # Page components
-│   ├── Home.tsx        # Landing page
-│   ├── Chat.tsx        # AI chat interface
-│   ├── About.tsx       # About us page
-│   ├── FAQs.tsx        # FAQs page
-│   ├── Disclaimer.tsx  # Disclaimer page
-│   └── Privacy.tsx     # Privacy policy page
-├── App.tsx             # Main app component with routing
-└── main.tsx            # Entry point
-```
+### **Storage & Security Layer**
+- **Database:** PostgreSQL (Supabase/AWS RDS).  
+- **File Storage:** Cloud storage (AWS S3, Supabase).  
+- **Security:** JWT authentication, environment variables for API keys.
 
-## Customization
+### **Deployment & Scaling**
+- **Frontend:** Vercel.  
+- **Backend:** FastAPI on Render/Heroku/AWS.  
+- **Database:** Supabase/AWS RDS.  
+- **Agents:** Containerized with Docker.  
+- **CI/CD:** GitHub Actions.
 
-### Colors
+---
 
-The green theme colors can be customized in `tailwind.config.js` under the `fin-green` color palette.
+## 📂 Repo Structure
 
-### Fonts
-
-The default font is Inter, loaded from Google Fonts. You can change it in `tailwind.config.js` and `index.html`.
-
-## License
-
-MIT
